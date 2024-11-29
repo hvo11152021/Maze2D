@@ -23,6 +23,9 @@ public class Maze {
     public Maze(){
         JFrame frame = new JFrame();
         frame.setTitle("Maze Game");
+        
+        frame.add(new Config());
+        
         frame.setSize(900,600);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
