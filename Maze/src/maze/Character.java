@@ -26,6 +26,22 @@ public class Character {
         blockY = 1;
     }
     
+    public int getX(){
+        return x;
+    }
+    
+    public int getY(){
+        return y;
+    }
+    
+    public int getBlockX(){
+        return blockX;
+    }
+    
+    public int getBlockY(){
+        return blockY;
+    }
+    
     public void move(int dx, int dy, int bx, int by){
     
     }
