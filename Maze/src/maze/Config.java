@@ -8,6 +8,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -18,10 +20,12 @@ import javax.swing.Timer;
 public class Config extends JPanel implements ActionListener {
     private Timer timer;
     private Map m;
+    private Character c;
     private char[][] map;
     
     public Config(){
         m = new Map();
+        c = new Character();
         
         timer = new Timer(25, this);
         timer.start();
@@ -45,6 +49,36 @@ public class Config extends JPanel implements ActionListener {
                     g.drawImage(m.makeWall(), x * 32, y * 32, null);
                 }
             }
+        }
+    }
+    
+    public class Al extends KeyAdapter {
+        public void keyPressed(KeyEvent e){
+            int keyletter = e.getKeyCode();
+            
+            if (keyletter == KeyEvent.VK_W){
+                c.move(0, -32, 0, -1);
+            }
+            
+            if (keyletter == KeyEvent.VK_S){
+                c.move(-32, 0, -1, 0);
+            }
+            
+            if (keyletter == KeyEvent.VK_A){
+                c.move(32, 0, 1, 0);
+            }
+            
+            if (keyletter == KeyEvent.VK_D){
+                c.move(0, 32, 0, 1);
+            }
+        }
+        
+        public void keyReleased(KeyEvent e){
+            
+        }
+        
+        public void keyTyped(KeyEvent e){
+            
         }
     }
 }
