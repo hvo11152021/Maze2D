@@ -42,6 +42,10 @@ public class Character {
         return blockY;
     }
     
+    public Image getCharacter(){
+        return character;
+    }
+    
     public void move(int dx, int dy, int bx, int by){
     
     }

@@ -50,6 +50,8 @@ public class Config extends JPanel implements ActionListener {
                 }
             }
         }
+        
+        g.drawImage(c.getCharacter(), c.getX(), c.getY(), null);
     }
     
     public class Al extends KeyAdapter {
